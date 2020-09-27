@@ -44,6 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Factory\Car.cs" />
+    <Compile Include="Factory\CarFactory.cs" />
+    <Compile Include="Factory\SedanCar.cs" />
+    <Compile Include="Factory\SUVCar.cs" />
+    <Compile Include="Factory\TruckCar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using singleton.Factory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace singleton
 {
@@ -10,26 +12,22 @@ namespace singleton
     {
         static void Main(string[] args)
         {
-            Parallel.Invoke(
-                () => method1(),
-                () => method2()
-                );
+            Car car = null;
+
+            Console.WriteLine("Select Your Type S=Sedan, U=SUV, T=Truck ??");
+            string type = Console.ReadLine();
+
+            car = (new CarFactory()).getYourCar(type);
+
+            runCommand(car);
 
             Console.ReadKey(true);
-
         }
 
-        public static void method1()
+        static void runCommand(Car car)
         {
-            Class1 c = Class1.getInstance();
-            c.print("Hello world");
-        }
-
-        public static void method2()
-        {
-            Class1 c2 = Class1.getInstance();
-            c2.print("adsadasd");
-            c2.print("adsadasd");
+            car.RunCar();
+            car.ShowCar();
         }
     }
 }
