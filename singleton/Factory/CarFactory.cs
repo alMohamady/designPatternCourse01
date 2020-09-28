@@ -6,8 +6,23 @@ using System.Threading.Tasks;
 
 namespace singleton.Factory
 {
-    class CarFactory
+    class CarFactory : AbstractFactory
     {
+        public void drowTire(string type)
+        {
+            switch (type)
+            {
+                case "S":
+                    (new TireSmall()).drowSamllTire();
+                    break;
+                case "U":
+                    (new TireLareg()).drowLaregTire();
+                    break;
+                default:
+                    (new TireXLareg()).drowTireXLareg();
+                    break;
+            }
+        }
 
         public Car getYourCar(string type)
         {
