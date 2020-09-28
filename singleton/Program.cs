@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using singleton.Builder;
 
 
 namespace singleton
@@ -12,28 +13,15 @@ namespace singleton
     {
         static void Main(string[] args)
         {
-            Car car = null;
+            IRobotBuilder robotBuilderOld = new RobotBulderOld();
+            
+            RobotBuilder robotBuilder = new RobotBuilder(robotBuilderOld);
+            robotBuilder.makeRobot();
 
-            Console.WriteLine("Select Your Type S=Sedan, U=SUV, T=Truck ??");
-            string type = Console.ReadLine();
+            Robot robot = robotBuilder.getRobot();
 
-            //car = (new CarFactory()).getYourCar(type);
-
-            //runCommand(car);
-
-            AbstractFactory af = new CarFactory();
-
-            car = af.getYourCar(type);
-            af.drowTire(type);
-            runCommand(car);
-
+            Console.WriteLine("  Robot Head " + robot.getRobotHead());
             Console.ReadKey(true);
-        }
-
-        static void runCommand(Car car)
-        {
-            car.RunCar();
-            car.ShowCar();
         }
     }
 }
