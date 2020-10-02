@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\Employee.cs" />
+    <Compile Include="Adapter\EmployeeAdapter.cs" />
     <Compile Include="Builder\IRobotBuilder.cs" />
     <Compile Include="Builder\Robot.cs" />
     <Compile Include="Builder\RobotBuilder.cs" />
@@ -96,5 +98,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
