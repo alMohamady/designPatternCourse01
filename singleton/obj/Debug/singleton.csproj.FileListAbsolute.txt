@@ -4,3 +4,6 @@ C:\Users\major\source\repos\singleton\singleton\bin\Debug\singleton.pdb
 C:\Users\major\source\repos\singleton\singleton\obj\Debug\singleton.csprojAssemblyReference.cache
 C:\Users\major\source\repos\singleton\singleton\obj\Debug\singleton.exe
 C:\Users\major\source\repos\singleton\singleton\obj\Debug\singleton.pdb
+C:\Users\major\source\repos\singleton\singleton\bin\Debug\Newtonsoft.Json.dll
+C:\Users\major\source\repos\singleton\singleton\bin\Debug\Newtonsoft.Json.xml
+C:\Users\major\source\repos\singleton\singleton\obj\Debug\singleton.csproj.CopyComplete

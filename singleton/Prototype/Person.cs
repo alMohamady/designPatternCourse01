@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,35 +7,49 @@ using System.Threading.Tasks;
 
 namespace singleton.Prototype
 {
-    class Person
+
+    public abstract class CloneablePrototype<T>
     {
-        public int Age;
-        public DateTime BirthDate;
-        public string Name;
-        public IdInfo idInfo;
-
-        public Person ShallowCopy()
+        // Shallow copy
+        public T Clone()
         {
-            return (Person)this.MemberwiseClone();
+            return (T)this.MemberwiseClone();
         }
 
-        public Person DeepCopy()
-        { 
-           Person person = (Person)this.MemberwiseClone();
-           person.idInfo = new IdInfo(this.idInfo.IdNumber);
-            person.Name = String.Copy(Name);
-            return person;
+        // Deep Copy
+        public T DeepCopy()
+        {
+            string result = JsonConvert.SerializeObject(this);
+            return JsonConvert.DeserializeObject<T>(result);
         }
-
     }
 
-    public class IdInfo
+    class Person : CloneablePrototype<Person>
     {
-        public int IdNumber;
+        public int Age;
+        public Guid Id;
+        public string Name;
+        public Adress AddressDetails;
 
-        public IdInfo(int idNumber)
+        public override string ToString()
         {
-            this.IdNumber = idNumber;
+            return string.Format(" Name : {0}  " + "Age : {1}  {2} ",
+                this.Name, this.Age.ToString(), AddressDetails.ToString());
         }
+    }
+
+    public class Adress
+    {
+        public int DoorNumber { get; set; }
+        public int StreetNumber { get; set; }
+        public int Zipcode { get; set; }
+        public string Country { get; set; }
+        public override string ToString()
+        {
+            return string.Format("AddressDetails : Door : {0}, Street: {1}, ZipCode : {2}," +
+                " Country : {3}", this.DoorNumber, this.StreetNumber, this.Zipcode.ToString(),
+                this.Country);
+        }
+
     }
 }
