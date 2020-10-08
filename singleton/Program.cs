@@ -7,37 +7,39 @@ using System.Threading.Tasks;
 using singleton.Builder;
 using singleton.Prototype;
 using singleton.Composite;
+using singleton.Proxy;
 
 namespace singleton
 {
     class Program
     {
 
+        public class Client
+        {
+            public void ClientCode(ISubject subject)
+            {
+                // ...
 
+                subject.Request();
+
+                // ...
+            }
+        }
 
         static void Main(string[] args)
         {
 
+            Client client = new Client();
 
-            IEmployee John = new Employee("John", "IT");
-            IEmployee Mike = new Employee("Mike", "IT");
-            IEmployee Jason = new Employee("Jason", "HR");
-            IEmployee Eric = new Employee("Eric", "HR");
-            IEmployee Henry = new Employee("Henry", "HR");
+            Console.WriteLine("Client: Executing the client code with a real subject:");
+            Subject realSubject = new Subject();
+            client.ClientCode(realSubject);
 
-            IEmployee Ahmed = new Manager("Ahmed", "IT")
-            { SubOrdinates = { John, Mike } };
+            Console.WriteLine();
 
-            IEmployee Mohamed = new Manager("Mohamed", "HR")
-            { SubOrdinates = { Jason, Eric, Henry } };
-
-            IEmployee Bob = new Manager("Bob", "Head")
-            { SubOrdinates = { Ahmed, Mohamed } };
-
-            Ahmed.GetDetails(1);
-            Bob.GetDetails(1);
-
-            Console.ReadLine();
+            Console.WriteLine("Client: Executing the same client code with a proxy:");
+            TheProxy proxy = new TheProxy(realSubject);
+            client.ClientCode(proxy);
 
 
             Console.ReadKey(true);
