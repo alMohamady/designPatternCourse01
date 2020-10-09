@@ -63,6 +63,12 @@
   <ItemGroup>
     <Compile Include="Adapter\Employee.cs" />
     <Compile Include="Adapter\EmployeeAdapter.cs" />
+    <Compile Include="Bridge\RefinedAbstraction\CardPayment.cs" />
+    <Compile Include="Bridge\ConcreteImplementer\CitiPaymentSystem.cs" />
+    <Compile Include="Bridge\ConcreteImplementer\IDBIPaymentSystem.cs" />
+    <Compile Include="Bridge\Implementer\IPaymentSystem.cs" />
+    <Compile Include="Bridge\RefinedAbstraction\NetBankingPayment.cs" />
+    <Compile Include="Bridge\Abstraction\Payment.cs" />
     <Compile Include="Builder\IRobotBuilder.cs" />
     <Compile Include="Builder\Robot.cs" />
     <Compile Include="Builder\RobotBuilder.cs" />
@@ -110,5 +116,6 @@
       <Name>ShoppingCartFacade</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
