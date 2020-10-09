@@ -1,51 +1,66 @@
-﻿using singleton.Factory;
+﻿
+using singleton.Flyweight;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using singleton.Builder;
-using singleton.Prototype;
-using singleton.Composite;
-using singleton.Proxy;
+
 
 namespace singleton
 {
     class Program
     {
 
-        public class Client
-        {
-            public void ClientCode(ISubject subject)
-            {
-                // ...
-
-                subject.Request();
-
-                // ...
-            }
-        }
 
         static void Main(string[] args)
         {
 
-            Client client = new Client();
+            var factory = new FlyweightFactory(
+                new Car { Company = "Chevrolet", Model = "Camaro2018", Color = "pink" },
+                new Car { Company = "Mercedes Benz", Model = "C300", Color = "black" },
+                new Car { Company = "Mercedes Benz", Model = "C500", Color = "red" },
+                new Car { Company = "BMW", Model = "M5", Color = "red" },
+                new Car { Company = "BMW", Model = "X6", Color = "white" }
+            );
+            factory.listFlyweights();
 
-            Console.WriteLine("Client: Executing the client code with a real subject:");
-            Subject realSubject = new Subject();
-            client.ClientCode(realSubject);
+            addCarToPoliceDatabase(factory, new Car
+            {
+                Number = "CL234IR",
+                Owner = "James Doe",
+                Company = "BMW",
+                Model = "M5",
+                Color = "red"
+            });
 
-            Console.WriteLine();
+            addCarToPoliceDatabase(factory, new Car
+            {
+                Number = "CL234IR",
+                Owner = "James Doe",
+                Company = "BMW",
+                Model = "X1",
+                Color = "red"
+            });
 
-            Console.WriteLine("Client: Executing the same client code with a proxy:");
-            TheProxy proxy = new TheProxy(realSubject);
-            client.ClientCode(proxy);
+            factory.listFlyweights();
 
 
             Console.ReadKey(true);
         }
 
 
+        public static void addCarToPoliceDatabase(FlyweightFactory factory, Car car)
+        {
+            Console.WriteLine("\nClient: Adding a car to database.");
 
+            var flyweight = factory.GetFlyweight(new Car
+            {
+                Color = car.Color,
+                Model = car.Model,
+                Company = car.Company
+            });
+            flyweight.Operation(car);
+        }
     }
 }
