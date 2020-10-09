@@ -78,6 +78,11 @@
     <Compile Include="Composite\Employee.cs" />
     <Compile Include="Composite\IEmployee.cs" />
     <Compile Include="Composite\Manager.cs" />
+    <Compile Include="Decorator\Decorator\CarDecorator.cs" />
+    <Compile Include="Decorator\ConcreteComponent\Hyndai.cs" />
+    <Compile Include="Decorator\Component\ICar.cs" />
+    <Compile Include="Decorator\ConcreteComponent\Suzuki.cs" />
+    <Compile Include="Decorator\OfferPrice.cs" />
     <Compile Include="Facade\FacadDemo.cs" />
     <Compile Include="Factory\AbstractFactory.cs" />
     <Compile Include="Factory\Car.cs" />

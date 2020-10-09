@@ -1,5 +1,5 @@
 ﻿
-using singleton.Bridge;
+using singleton.Decorator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +16,13 @@ namespace singleton
         static void Main(string[] args)
         {
 
-            Payment order = new CardPayment();
-            order._IPaymentSystem = new CitiPaymentSystem();
-            order.MakePayment();
-
-            order._IPaymentSystem = new IDBIPaymentSystem();
-            order.MakePayment();
-
-            order = new NetBankingPayment();
-            order._IPaymentSystem = new CitiPaymentSystem();
-            order.MakePayment();
+            ICar car = new Suzuki();
+            CarDecorator decorator = new OfferPrice(car);
+            Console.WriteLine(string.Format("Make :{0}  Price:{1} " +
+                "DiscountPrice : {2}"
+                , decorator.Make, decorator.GetPrice().ToString(),
+                decorator.GetDiscountedPrice().ToString()));
+            Console.ReadLine();
 
 
             Console.ReadKey(true);
