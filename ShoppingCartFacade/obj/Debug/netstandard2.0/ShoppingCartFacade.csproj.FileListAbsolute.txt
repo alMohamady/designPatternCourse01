@@ -1,0 +1,11 @@
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\bin\Debug\netstandard2.0\ShoppingCartFacade.deps.json
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\bin\Debug\netstandard2.0\ShoppingCartFacade.dll
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\bin\Debug\netstandard2.0\ShoppingCartFacade.pdb
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\bin\Debug\netstandard2.0\ShoppingCart.dll
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\bin\Debug\netstandard2.0\ShoppingCart.pdb
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\obj\Debug\netstandard2.0\ShoppingCartFacade.csprojAssemblyReference.cache
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\obj\Debug\netstandard2.0\ShoppingCartFacade.AssemblyInfoInputs.cache
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\obj\Debug\netstandard2.0\ShoppingCartFacade.AssemblyInfo.cs
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\obj\Debug\netstandard2.0\ShoppingCartFacade.csproj.CopyComplete
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\obj\Debug\netstandard2.0\ShoppingCartFacade.dll
+C:\Users\major\source\repos\singleton\ShoppingCartFacade\obj\Debug\netstandard2.0\ShoppingCartFacade.pdb

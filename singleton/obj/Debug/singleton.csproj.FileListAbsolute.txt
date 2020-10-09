@@ -7,3 +7,7 @@ C:\Users\major\source\repos\singleton\singleton\obj\Debug\singleton.pdb
 C:\Users\major\source\repos\singleton\singleton\bin\Debug\Newtonsoft.Json.dll
 C:\Users\major\source\repos\singleton\singleton\bin\Debug\Newtonsoft.Json.xml
 C:\Users\major\source\repos\singleton\singleton\obj\Debug\singleton.csproj.CopyComplete
+C:\Users\major\source\repos\singleton\singleton\bin\Debug\ShoppingCartFacade.dll
+C:\Users\major\source\repos\singleton\singleton\bin\Debug\ShoppingCart.dll
+C:\Users\major\source\repos\singleton\singleton\bin\Debug\ShoppingCartFacade.pdb
+C:\Users\major\source\repos\singleton\singleton\bin\Debug\ShoppingCart.pdb

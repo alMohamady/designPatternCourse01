@@ -1,0 +1,8 @@
+C:\Users\major\source\repos\singleton\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.deps.json
+C:\Users\major\source\repos\singleton\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.dll
+C:\Users\major\source\repos\singleton\ShoppingCart\bin\Debug\netstandard2.0\ShoppingCart.pdb
+C:\Users\major\source\repos\singleton\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.csprojAssemblyReference.cache
+C:\Users\major\source\repos\singleton\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.AssemblyInfoInputs.cache
+C:\Users\major\source\repos\singleton\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.AssemblyInfo.cs
+C:\Users\major\source\repos\singleton\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.dll
+C:\Users\major\source\repos\singleton\ShoppingCart\obj\Debug\netstandard2.0\ShoppingCart.pdb

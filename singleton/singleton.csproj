@@ -72,6 +72,7 @@
     <Compile Include="Composite\Employee.cs" />
     <Compile Include="Composite\IEmployee.cs" />
     <Compile Include="Composite\Manager.cs" />
+    <Compile Include="Facade\FacadDemo.cs" />
     <Compile Include="Factory\AbstractFactory.cs" />
     <Compile Include="Factory\Car.cs" />
     <Compile Include="Factory\CarFactory.cs" />
@@ -103,6 +104,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingCartFacade\ShoppingCartFacade.csproj">
+      <Project>{904048c0-9a8d-41bb-bb8d-72237266e58d}</Project>
+      <Name>ShoppingCartFacade</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
