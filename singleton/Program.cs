@@ -1,5 +1,4 @@
-﻿
-using singleton.Decorator;
+﻿using singleton.TemplateMethod;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +10,27 @@ namespace singleton
 {
     class Program
     {
+        class Client
+        {
+            public static void ClientCode(AbstractClass abstractClass)
+            {
+
+                abstractClass.TemplateMethod();
+            }
+        }
 
 
         static void Main(string[] args)
         {
 
-            ICar car = new Suzuki();
-            CarDecorator decorator = new OfferPrice(car);
-            Console.WriteLine(string.Format("Make :{0}  Price:{1} " +
-                "DiscountPrice : {2}"
-                , decorator.Make, decorator.GetPrice().ToString(),
-                decorator.GetDiscountedPrice().ToString()));
-            Console.ReadLine();
+            Console.WriteLine("Same client code can work with different subclasses:");
 
+            Client.ClientCode(new ConcreteClass1());
+
+            Console.Write("\n");
+
+            Console.WriteLine("Same client code can work with different subclasses:");
+            Client.ClientCode(new ConcreteClass2());
 
             Console.ReadKey(true);
         }
