@@ -107,6 +107,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prototype\Person.cs" />
     <Compile Include="Proxy\Subject.cs" />
+    <Compile Include="Strategy\ConcreteStrategy.cs" />
+    <Compile Include="Strategy\Context.cs" />
     <Compile Include="TemplateMethod\AbstractClass.cs" />
     <Compile Include="TemplateMethod\ConcreteClasses.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using singleton.Observer;
+﻿
+using singleton.Strategy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +16,17 @@ namespace singleton
 
         static void Main(string[] args)
         {
-            var subject = new Subject();
-            var observerA = new ConcreteObserverA();
-            subject.Attach(observerA);
+            var context = new Context();
 
-            var observerB = new ConcreteObserverB();
-            subject.Attach(observerB);
+            Console.WriteLine("Client: Strategy is set to normal sorting.");
+            context.SetStrategy(new ConcreteStrategyA());
+            context.DoSomeBusinessLogic();
 
-            subject.SomeBusinessLogic();
-            subject.SomeBusinessLogic();
+            Console.WriteLine();
 
-            subject.Detach(observerB);
-
-            subject.SomeBusinessLogic();
+            Console.WriteLine("Client: Strategy is set to reverse sorting.");
+            context.SetStrategy(new ConcreteStrategyB());
+            context.DoSomeBusinessLogic();
 
             Console.ReadKey(true);
         }
