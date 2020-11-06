@@ -78,6 +78,9 @@
     <Compile Include="ChainOfResponsibility\IHandler.cs" />
     <Compile Include="ChainOfResponsibility\MonkeyHandler.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Command\ComplexCommand.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\Receiver.cs" />
     <Compile Include="Composite\Employee.cs" />
     <Compile Include="Composite\IEmployee.cs" />
     <Compile Include="Composite\Manager.cs" />

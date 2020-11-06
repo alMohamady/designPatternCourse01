@@ -1,5 +1,5 @@
 ﻿
-using singleton.Strategy;
+using singleton.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,21 +12,14 @@ namespace singleton
     class Program
     {
 
-
-
         static void Main(string[] args)
         {
-            var context = new Context();
+            Invoker invoker = new Invoker();
+            invoker.SetOnStart(new SimpleCommand("Say Hi!"));
+            Receiver receiver = new Receiver();
+            invoker.SetOnFinish(new ComplexCommand(receiver, "Send email", "Save report"));
 
-            Console.WriteLine("Client: Strategy is set to normal sorting.");
-            context.SetStrategy(new ConcreteStrategyA());
-            context.DoSomeBusinessLogic();
-
-            Console.WriteLine();
-
-            Console.WriteLine("Client: Strategy is set to reverse sorting.");
-            context.SetStrategy(new ConcreteStrategyB());
-            context.DoSomeBusinessLogic();
+            invoker.DoSomethingImportant();
 
             Console.ReadKey(true);
         }
