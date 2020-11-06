@@ -1,4 +1,4 @@
-﻿using singleton.ChainOfResponsibility;
+﻿using singleton.Observer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +15,19 @@ namespace singleton
 
         static void Main(string[] args)
         {
+            var subject = new Subject();
+            var observerA = new ConcreteObserverA();
+            subject.Attach(observerA);
 
-            var monkey = new MonkeyHandler();
-            var squirrel = new SquirrelHandler();
-            var dog = new DogHandler();
+            var observerB = new ConcreteObserverB();
+            subject.Attach(observerB);
 
-            monkey.SetNext(squirrel).SetNext(dog);
+            subject.SomeBusinessLogic();
+            subject.SomeBusinessLogic();
 
-            Console.WriteLine("Chain: Monkey > Squirrel > Dog\n");
-            Client.ClientCode(monkey);
-            Console.WriteLine();
+            subject.Detach(observerB);
 
-            Console.WriteLine("Subchain: Squirrel > Dog\n");
-            Client.ClientCode(squirrel);
+            subject.SomeBusinessLogic();
 
             Console.ReadKey(true);
         }
