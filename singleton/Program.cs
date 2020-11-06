@@ -1,4 +1,4 @@
-﻿using singleton.Mediator;
+﻿using singleton.ChainOfResponsibility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,17 +16,18 @@ namespace singleton
         static void Main(string[] args)
         {
 
-            Component1 component1 = new Component1();
-            Component2 component2 = new Component2();
-            new ConcreteMediator(component1, component2);
+            var monkey = new MonkeyHandler();
+            var squirrel = new SquirrelHandler();
+            var dog = new DogHandler();
 
-            Console.WriteLine("Client triggets operation A.");
-            component1.DoA();
+            monkey.SetNext(squirrel).SetNext(dog);
 
+            Console.WriteLine("Chain: Monkey > Squirrel > Dog\n");
+            Client.ClientCode(monkey);
             Console.WriteLine();
 
-            Console.WriteLine("Client triggers operation D.");
-            component2.DoD();
+            Console.WriteLine("Subchain: Squirrel > Dog\n");
+            Client.ClientCode(squirrel);
 
             Console.ReadKey(true);
         }

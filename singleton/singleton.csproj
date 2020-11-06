@@ -74,6 +74,9 @@
     <Compile Include="Builder\RobotBuilder.cs" />
     <Compile Include="Builder\RobotBulderOld.cs" />
     <Compile Include="Builder\RobotPlan.cs" />
+    <Compile Include="ChainOfResponsibility\Client.cs" />
+    <Compile Include="ChainOfResponsibility\IHandler.cs" />
+    <Compile Include="ChainOfResponsibility\MonkeyHandler.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Composite\Employee.cs" />
     <Compile Include="Composite\IEmployee.cs" />
