@@ -1,4 +1,4 @@
-﻿using singleton.TemplateMethod;
+﻿using singleton.Mediator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,27 +10,23 @@ namespace singleton
 {
     class Program
     {
-        class Client
-        {
-            public static void ClientCode(AbstractClass abstractClass)
-            {
 
-                abstractClass.TemplateMethod();
-            }
-        }
 
 
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Same client code can work with different subclasses:");
+            Component1 component1 = new Component1();
+            Component2 component2 = new Component2();
+            new ConcreteMediator(component1, component2);
 
-            Client.ClientCode(new ConcreteClass1());
+            Console.WriteLine("Client triggets operation A.");
+            component1.DoA();
 
-            Console.Write("\n");
+            Console.WriteLine();
 
-            Console.WriteLine("Same client code can work with different subclasses:");
-            Client.ClientCode(new ConcreteClass2());
+            Console.WriteLine("Client triggers operation D.");
+            component2.DoD();
 
             Console.ReadKey(true);
         }
