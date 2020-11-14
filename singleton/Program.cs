@@ -1,5 +1,4 @@
-﻿
-using singleton.Command;
+﻿using singleton.State;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +13,10 @@ namespace singleton
 
         static void Main(string[] args)
         {
-            Invoker invoker = new Invoker();
-            invoker.SetOnStart(new SimpleCommand("Say Hi!"));
-            Receiver receiver = new Receiver();
-            invoker.SetOnFinish(new ComplexCommand(receiver, "Send email", "Save report"));
+            var context = new Context(new ConcreteStateA());
+            context.Request1();
+            context.Request2();
 
-            invoker.DoSomethingImportant();
 
             Console.ReadKey(true);
         }
