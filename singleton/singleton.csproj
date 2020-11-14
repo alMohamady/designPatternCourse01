@@ -100,6 +100,7 @@
     <Compile Include="Factory\TireXLareg.cs" />
     <Compile Include="Factory\TruckCar.cs" />
     <Compile Include="Flyweight\Flyweight.cs" />
+    <Compile Include="Interpreter\Client.cs" />
     <Compile Include="Iterator\AlphabeticalOrderIterator.cs" />
     <Compile Include="Iterator\Iterator.cs" />
     <Compile Include="Iterator\WordsCollection.cs" />

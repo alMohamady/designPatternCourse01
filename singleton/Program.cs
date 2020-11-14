@@ -1,5 +1,5 @@
 ﻿
-using singleton.Iterator;
+using singleton.Interpreter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,26 +14,11 @@ namespace singleton
 
         static void Main(string[] args)
         {
-            var collection = new WordsCollection();
-            collection.AddItem("First");
-            collection.AddItem("Second");
-            collection.AddItem("Third");
-
-            Console.WriteLine("Straight traversal:");
-
-            foreach (var element in collection)
-            {
-                Console.WriteLine(element);
-            }
-
-            Console.WriteLine("\nReverse traversal:");
-
-            collection.ReverseDirection();
-
-            foreach (var element in collection)
-            {
-                Console.WriteLine(element);
-            }
+            Context context = new Context("Dot Net context");
+            NonterminalExpression root = new NonterminalExpression();
+            root.Expression1 = new TerminalExpression();
+            root.Expression2 = new TerminalExpression();
+            root.Interpret(context);
 
             Console.ReadKey(true);
         }
