@@ -106,6 +106,10 @@
     <Compile Include="Iterator\WordsCollection.cs" />
     <Compile Include="Mediator\BaseComponent.cs" />
     <Compile Include="Mediator\IMediator.cs" />
+    <Compile Include="Memento\Caretaker.cs" />
+    <Compile Include="Memento\ConcreteMemento.cs" />
+    <Compile Include="Memento\IMemento.cs" />
+    <Compile Include="Memento\Originator.cs" />
     <Compile Include="Observer\ConcreteObserver.cs" />
     <Compile Include="Observer\IObserver.cs" />
     <Compile Include="Observer\ISubject.cs" />

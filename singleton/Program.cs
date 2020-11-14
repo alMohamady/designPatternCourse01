@@ -1,5 +1,5 @@
 ﻿
-using singleton.Interpreter;
+using singleton.Memento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +14,28 @@ namespace singleton
 
         static void Main(string[] args)
         {
-            Context context = new Context("Dot Net context");
-            NonterminalExpression root = new NonterminalExpression();
-            root.Expression1 = new TerminalExpression();
-            root.Expression2 = new TerminalExpression();
-            root.Interpret(context);
+            Originator originator = new Originator("Super-duper-super-puper-super.");
+            Caretaker caretaker = new Caretaker(originator);
+
+            caretaker.Backup();
+            originator.DoSomething();
+
+            caretaker.Backup();
+            originator.DoSomething();
+
+            caretaker.Backup();
+            originator.DoSomething();
+
+            Console.WriteLine();
+            caretaker.ShowHistory();
+
+            Console.WriteLine("\nClient: Now, let's rollback!\n");
+            caretaker.Undo();
+
+            Console.WriteLine("\n\nClient: Once more!\n");
+            caretaker.Undo();
+
+            Console.WriteLine();
 
             Console.ReadKey(true);
         }
